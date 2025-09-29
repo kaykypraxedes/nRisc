@@ -1,0 +1,120 @@
+# Kayky Moreira Praxedes, Carlos Ernesto Cardoso dos Reis
+
+# Considerando que a mensagem (HELLO) já está gravada na memória:
+# MemoriaData[0] = H (01001000 - 72)
+# MemoriaData[1] = E (01000101 - 69)
+# MemoriaData[2] = L (01001100 - 76)
+# MemoriaData[3] = L (01001100 - 76)
+# MemoriaData[4] = O (01001111 – 79)
+# MemoriaData[5] = EOF (0)
+
+#Assembly
+0-  sub $c2, $c2							000 10 10 1							   # $c2 = ponteiro
+1-  sub $c0, $c0							000 00 00 1							   # $c0 = 0
+2-  sub $c3, $c3							000 11 11 1					   		   # $c3 = 0
+3-  nop									    111 0000 0
+
+# Define-se a cifra 
+4-  addi $c0, 3                             001 00 011                             # $c0 = 3
+5-  addi $c0, 2			    				001 00 010                             # $c0 = 5
+6-  addi $c0, 0      	    				001 00 000                             # $c0 = 5
+7-  addi $c0, 0                             001 00 000                             # $c0 = 5
+8-  addi $c0, 0                             001 00 000                             # $c0 = 5
+9-  nop 			            	    	111 0000 0
+# Para tornar o código programável, sem que a mudança de cifra alterasse a quantidade de linhas (já que as somas com imediato só podem ser feitas de 3 em 3 e os jumps são pra uma linha específica), faz-se uma soma de 5 linhas sempre (que vai de -15 até 15, que cobre todo o range)
+
+# Processo de cifragem
+10- ld $c1, $c2                             011 01 10 0                         # $c1 = memória[$c2] (letra)
+11- add $c1, $c0                            000 01 00 0                         # $c1 + $c0 (adiciona a cifragem à letra)
+12- beq $c1, $c0                            101 01 00 0                         # se $c1 == $c0 → $c1 era igual à 0 (EOF) → $re = 1
+13- sub $c0, $c0                            000 00 00 1                         # $c0 = 0
+14- nop 	                                111 0000 0 			
+15- addi $c3, 3		      			        001 11 011                          # $c3 = 3
+16- mult $c3, $c3		               		010 11 11 0                         # $c3 = 9
+17- mult $c3, $c3	             			010 11 11 0                         # $c3 = 81
+18- addi $c3, 1		            			001 11 001                          # $c3 = 82
+19- result $c3, 1	      	        		110 11 001                          # $re == 1 ? desvio pro fim ($c3): PC + 1
+20- sub $c0, $c0	      	        		000 00 00 1                         # $c0 = 0
+21- sub $c3, $c3      		        		000 11 11 1                         # $c3 = 0
+
+# Teste se está fora do range (maior)
+22- nop 			         	        	111 0000 0
+23- addi $c0, 3		      	        		001 00 011                          # $c0 = 3
+24- addi $c0, 3	      		        		001 00 011 	            	       	# $c0 = 6
+25- addi $c0, 3	      		        		001 00 011 	            	       	# $c0 = 9
+26- addi $c0, 1	      	    	    		001 00 001 		       	            # $c0 = 10
+27- addi $c3, 3	      		        		001 11 011 	            	       	# $c3 = 3
+28- addi $c3, 3      	   		    		001 11 011 	     	  	            # $c3 = 6
+29- addi $c3, 3		        		    	001 11 011 	                 	  	# $c3 = 9
+30- mult $c0, $c3	      		    	    010 00 11 0 	     	        	# $c0 = 90
+31- addi $c0, 1		      		    	    001 00 001 		                	# $c0 = 91 
+# (máximo do alfabeto: 91 = Z)
+32- sub $c3, $c3		             		000 11 11 1      			        # $c3 = 0
+# $c1 < 91 ? $re = 1 : $re = 0
+33- slt $c1, $c0	        	    		101 01 00 1 						
+34- sub $c0, $c0	               			000 00 00 1               			# $c0 = 0
+35- sub $c3, $c3	          	    		000 11 11 1 	     	        	# $c3 = 0
+36- addi $c3, 3		              			001 11 011          		       	# $c3 = 3
+37- add $c0, $c3	      		        	000 00 11 0 	               		# $c0 = 3
+38- mult $c3, $c0	              			010 11 00 0         	     		# $c3 = 9
+39- mult $c3, $c0	      	        		010 11 00 0 	             		# $c3 = 27
+40- add $c3, $c3	      	        		000 11 11 0 	     	        	# $c3 = 54
+41- addi $c3, -3	            			001 11 101 		                   	# $c3 = 51
+42- result $c3, 1	             			110 11 001                          # $re == 1 ? desvio para o teste menor ($c3) : PC + 1
+
+# Corrige se está fora do range (maior)
+43- sub $c3, $c3	              			000 11 11 1                			# $c3 = 0
+44- sub $c0, $c0	      	        		000 00 00 1             			# $c0 = 0
+45- addi $c0, 3		       			        001 00 011                          # $c0 = 3
+46- addi $c3, 3		             			001 11 011                          # $c3 = 3
+47- mult $c0, $c3	      	        		010 00 11 0                			# $c0 = 9
+48- mult $c0, $c3		      	 	        010 00 11 0 	            		# $c0 = 27
+49- addi $c0, -1	              			001 00 111                          # $c0 = 26
+# (ajuste para o range)
+50- sub $c1, $c0	               			000 01 00 1 	              		# $c1 -= 26
+
+# Teste se está fora do range (menor)
+51- nop 				            	    111 0000 0
+52- sub $c0, $c0	              			000 00 00 1 		     	        # $c0 = 0
+53- sub $c3, $c3	      	        		000 11 11 1                			# $c3 = 0
+54- addi $c0, 3		      			        001 00 011 	            	       	# $c0 = 3
+55- addi $c0, 1		              			001 00 001 	                 	  	# $c0 = 4
+56- add $c3, $c0	      	        		000 11 00 0              			# $c3 = 4
+57- mult $c0, $c3	      			        010 00 11 0              			# $c0 = 16
+58- mult $c0, $c3	              			010 00 11 0 	     	           	# $c0 = 64
+59- addi $c0, 1		      	        		001 00 001 		                	# $c0 = 65
+# (mínimo do alfabeto: 65 = A)
+60- sub $c3, $c3	      			        000 11 11 1 	              		# $c3 = 0
+# $c1 < 65 $re = 1 : $re = 0
+61- slt $c1, $c0	        	      		101 01 00 1 						
+62- sub $c0, $c0	      	        		000 00 00 1 	             		# $c0 = 0		
+63- addi $c3, 3		      			        001 11 011 		                    # $c3 = 3
+64- mult $c3, $c3	        	      		010 11 11 0 	               		# $c3 = 9
+65- mult $c3, $c3		              		010 11 11 0 	            		# $c3 = 81
+66- addi $c3, -3	      			        001 11 101 		                  	# $c3 = 78
+67- result $c3, 0	        	      		110 11 001                          # $re == 1 ? continua : desvio para o salvamento ($c3)
+
+# Corrige se está fora do range (menor)
+68- sub $c3, $c3	      	        		000 11 11 1      		        	# $c3 = 0
+69- sub $c0, $c0	      			        000 00 00 1                 		# $c0 = 0
+70- addi $c0, 3		              			001 00 011 		                    # $c0 = 3
+71- addi $c3, 3		      	        		001 11 011 		                    # $c3 = 3		
+72- mult $c0, $c3		      		        010 00 11 0 	      	        	# $c0 = 9
+73- mult $c0, $c3	              			010 00 11 0 	         	    	# $c0 = 27
+74- addi $c0, -1	      	        		001 00 111 	                 		# $c0 = 26
+# (ajuste para o range)
+75- add $c1, $c0	               			000 01 00 0                			# $c1 += 26 
+76- sub $c0, $c0	      		        	000 00 00 1 	     	        	# $c0 = 0
+
+# Salvamento
+77- nop 			                 	   	111 0000 0
+78- st $c1, $c2		      	        		011 01 10 1                         # memória[$c2] = $c1 						
+79- addi $c2, 1		      			        001 10 001 	     	            	# $c2 += 1 (incremento do ponteiro)
+
+# Recomeça o loop
+80- addi $c0, 2	        	      			001 00 001 	                        # $c0 = 1
+81- jr $c0				              	    100 00 000                          # desvio para o início
+
+# Fim
+82- nop 				            	    111 0000 0
+83- hlt 			                	   	111 0000 1

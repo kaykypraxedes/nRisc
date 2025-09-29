@@ -1,0 +1,4185 @@
+|nRisc
+Clock => Clock.IN3
+Reset => Reset.IN3
+
+
+|nRisc|somador8bits:pc_1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|somador8bits:pc_1|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|somador8bits:pc_1|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|somador8bits:pc_1|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|somador8bits:pc_1|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|somador8bits:pc_1|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|somador8bits:pc_1|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|somador8bits:pc_1|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|somador8bits:pc_1|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Pc:pc_
+endereco[0] => enderecoSaida[0]~reg0.DATAIN
+endereco[1] => enderecoSaida[1]~reg0.DATAIN
+endereco[2] => enderecoSaida[2]~reg0.DATAIN
+endereco[3] => enderecoSaida[3]~reg0.DATAIN
+endereco[4] => enderecoSaida[4]~reg0.DATAIN
+endereco[5] => enderecoSaida[5]~reg0.DATAIN
+endereco[6] => enderecoSaida[6]~reg0.DATAIN
+endereco[7] => enderecoSaida[7]~reg0.DATAIN
+End => enderecoSaida[7]~reg0.ENA
+End => enderecoSaida[6]~reg0.ENA
+End => enderecoSaida[5]~reg0.ENA
+End => enderecoSaida[4]~reg0.ENA
+End => enderecoSaida[3]~reg0.ENA
+End => enderecoSaida[2]~reg0.ENA
+End => enderecoSaida[1]~reg0.ENA
+End => enderecoSaida[0]~reg0.ENA
+Reset => enderecoSaida[0]~reg0.ACLR
+Reset => enderecoSaida[1]~reg0.ACLR
+Reset => enderecoSaida[2]~reg0.ACLR
+Reset => enderecoSaida[3]~reg0.ACLR
+Reset => enderecoSaida[4]~reg0.ACLR
+Reset => enderecoSaida[5]~reg0.ACLR
+Reset => enderecoSaida[6]~reg0.ACLR
+Reset => enderecoSaida[7]~reg0.ACLR
+Clock => enderecoSaida[0]~reg0.CLK
+Clock => enderecoSaida[1]~reg0.CLK
+Clock => enderecoSaida[2]~reg0.CLK
+Clock => enderecoSaida[3]~reg0.CLK
+Clock => enderecoSaida[4]~reg0.CLK
+Clock => enderecoSaida[5]~reg0.CLK
+Clock => enderecoSaida[6]~reg0.CLK
+Clock => enderecoSaida[7]~reg0.CLK
+enderecoSaida[0] <= enderecoSaida[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enderecoSaida[1] <= enderecoSaida[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enderecoSaida[2] <= enderecoSaida[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enderecoSaida[3] <= enderecoSaida[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enderecoSaida[4] <= enderecoSaida[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enderecoSaida[5] <= enderecoSaida[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enderecoSaida[6] <= enderecoSaida[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enderecoSaida[7] <= enderecoSaida[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|MemoriaInstrucoes:memInst_
+endereco[0] => ~NO_FANOUT~
+endereco[1] => ~NO_FANOUT~
+endereco[2] => ~NO_FANOUT~
+endereco[3] => ~NO_FANOUT~
+endereco[4] => ~NO_FANOUT~
+endereco[5] => ~NO_FANOUT~
+endereco[6] => ~NO_FANOUT~
+endereco[7] => ~NO_FANOUT~
+OpCode2 <= <GND>
+OpCode1 <= <GND>
+OpCode0 <= <GND>
+funct <= <GND>
+reg1[0] <= <GND>
+reg1[1] <= <GND>
+reg2[0] <= <GND>
+reg2[1] <= <GND>
+imediato[0] <= <GND>
+imediato[1] <= <GND>
+imediato[2] <= <GND>
+
+
+|nRisc|BancoDeRegistradores:bancoReg_
+reEntrada[0] => reSaida[0]~reg0.DATAIN
+reEntrada[1] => reSaida[1]~reg0.DATAIN
+reEntrada[2] => reSaida[2]~reg0.DATAIN
+reEntrada[3] => reSaida[3]~reg0.DATAIN
+reEntrada[4] => reSaida[4]~reg0.DATAIN
+reEntrada[5] => reSaida[5]~reg0.DATAIN
+reEntrada[6] => reSaida[6]~reg0.DATAIN
+reEntrada[7] => reSaida[7]~reg0.DATAIN
+Clock => reSaida[0]~reg0.CLK
+Clock => reSaida[1]~reg0.CLK
+Clock => reSaida[2]~reg0.CLK
+Clock => reSaida[3]~reg0.CLK
+Clock => reSaida[4]~reg0.CLK
+Clock => reSaida[5]~reg0.CLK
+Clock => reSaida[6]~reg0.CLK
+Clock => reSaida[7]~reg0.CLK
+Clock => registradores[0][0].CLK
+Clock => registradores[0][1].CLK
+Clock => registradores[0][2].CLK
+Clock => registradores[0][3].CLK
+Clock => registradores[0][4].CLK
+Clock => registradores[0][5].CLK
+Clock => registradores[0][6].CLK
+Clock => registradores[0][7].CLK
+Clock => registradores[1][0].CLK
+Clock => registradores[1][1].CLK
+Clock => registradores[1][2].CLK
+Clock => registradores[1][3].CLK
+Clock => registradores[1][4].CLK
+Clock => registradores[1][5].CLK
+Clock => registradores[1][6].CLK
+Clock => registradores[1][7].CLK
+Clock => registradores[2][0].CLK
+Clock => registradores[2][1].CLK
+Clock => registradores[2][2].CLK
+Clock => registradores[2][3].CLK
+Clock => registradores[2][4].CLK
+Clock => registradores[2][5].CLK
+Clock => registradores[2][6].CLK
+Clock => registradores[2][7].CLK
+Clock => registradores[3][0].CLK
+Clock => registradores[3][1].CLK
+Clock => registradores[3][2].CLK
+Clock => registradores[3][3].CLK
+Clock => registradores[3][4].CLK
+Clock => registradores[3][5].CLK
+Clock => registradores[3][6].CLK
+Clock => registradores[3][7].CLK
+Reset => reSaida[0]~reg0.ACLR
+Reset => reSaida[1]~reg0.ACLR
+Reset => reSaida[2]~reg0.PRESET
+Reset => reSaida[3]~reg0.PRESET
+Reset => reSaida[4]~reg0.PRESET
+Reset => reSaida[5]~reg0.PRESET
+Reset => reSaida[6]~reg0.PRESET
+Reset => reSaida[7]~reg0.PRESET
+Reset => registradores[0][0].ACLR
+Reset => registradores[0][1].ACLR
+Reset => registradores[0][2].ACLR
+Reset => registradores[0][3].ACLR
+Reset => registradores[0][4].ACLR
+Reset => registradores[0][5].ACLR
+Reset => registradores[0][6].ACLR
+Reset => registradores[0][7].ACLR
+Reset => registradores[1][0].ACLR
+Reset => registradores[1][1].ACLR
+Reset => registradores[1][2].ACLR
+Reset => registradores[1][3].ACLR
+Reset => registradores[1][4].ACLR
+Reset => registradores[1][5].ACLR
+Reset => registradores[1][6].ACLR
+Reset => registradores[1][7].ACLR
+Reset => registradores[2][0].ACLR
+Reset => registradores[2][1].ACLR
+Reset => registradores[2][2].ACLR
+Reset => registradores[2][3].ACLR
+Reset => registradores[2][4].ACLR
+Reset => registradores[2][5].ACLR
+Reset => registradores[2][6].ACLR
+Reset => registradores[2][7].ACLR
+Reset => registradores[3][0].ACLR
+Reset => registradores[3][1].ACLR
+Reset => registradores[3][2].ACLR
+Reset => registradores[3][3].ACLR
+Reset => registradores[3][4].ACLR
+Reset => registradores[3][5].ACLR
+Reset => registradores[3][6].ACLR
+Reset => registradores[3][7].ACLR
+RegWrite => registradores[3][7].ENA
+RegWrite => registradores[3][6].ENA
+RegWrite => registradores[3][5].ENA
+RegWrite => registradores[3][4].ENA
+RegWrite => registradores[3][3].ENA
+RegWrite => registradores[3][2].ENA
+RegWrite => registradores[3][1].ENA
+RegWrite => registradores[3][0].ENA
+RegWrite => registradores[2][7].ENA
+RegWrite => registradores[2][6].ENA
+RegWrite => registradores[2][5].ENA
+RegWrite => registradores[2][4].ENA
+RegWrite => registradores[2][3].ENA
+RegWrite => registradores[2][2].ENA
+RegWrite => registradores[2][1].ENA
+RegWrite => registradores[2][0].ENA
+RegWrite => registradores[1][7].ENA
+RegWrite => registradores[1][6].ENA
+RegWrite => registradores[1][5].ENA
+RegWrite => registradores[1][4].ENA
+RegWrite => registradores[1][3].ENA
+RegWrite => registradores[1][2].ENA
+RegWrite => registradores[1][1].ENA
+RegWrite => registradores[1][0].ENA
+RegWrite => registradores[0][7].ENA
+RegWrite => registradores[0][6].ENA
+RegWrite => registradores[0][5].ENA
+RegWrite => registradores[0][4].ENA
+RegWrite => registradores[0][3].ENA
+RegWrite => registradores[0][2].ENA
+RegWrite => registradores[0][1].ENA
+RegWrite => registradores[0][0].ENA
+Reg1[0] => Mux0.IN1
+Reg1[0] => Mux1.IN1
+Reg1[0] => Mux2.IN1
+Reg1[0] => Mux3.IN1
+Reg1[0] => Mux4.IN1
+Reg1[0] => Mux5.IN1
+Reg1[0] => Mux6.IN1
+Reg1[0] => Mux7.IN1
+Reg1[0] => Decoder0.IN1
+Reg1[1] => Mux0.IN0
+Reg1[1] => Mux1.IN0
+Reg1[1] => Mux2.IN0
+Reg1[1] => Mux3.IN0
+Reg1[1] => Mux4.IN0
+Reg1[1] => Mux5.IN0
+Reg1[1] => Mux6.IN0
+Reg1[1] => Mux7.IN0
+Reg1[1] => Decoder0.IN0
+Reg2[0] => Mux8.IN1
+Reg2[0] => Mux9.IN1
+Reg2[0] => Mux10.IN1
+Reg2[0] => Mux11.IN1
+Reg2[0] => Mux12.IN1
+Reg2[0] => Mux13.IN1
+Reg2[0] => Mux14.IN1
+Reg2[0] => Mux15.IN1
+Reg2[1] => Mux8.IN0
+Reg2[1] => Mux9.IN0
+Reg2[1] => Mux10.IN0
+Reg2[1] => Mux11.IN0
+Reg2[1] => Mux12.IN0
+Reg2[1] => Mux13.IN0
+Reg2[1] => Mux14.IN0
+Reg2[1] => Mux15.IN0
+dadoEscrever[0] => registradores.DATAB
+dadoEscrever[0] => registradores.DATAB
+dadoEscrever[0] => registradores.DATAB
+dadoEscrever[0] => registradores.DATAB
+dadoEscrever[1] => registradores.DATAB
+dadoEscrever[1] => registradores.DATAB
+dadoEscrever[1] => registradores.DATAB
+dadoEscrever[1] => registradores.DATAB
+dadoEscrever[2] => registradores.DATAB
+dadoEscrever[2] => registradores.DATAB
+dadoEscrever[2] => registradores.DATAB
+dadoEscrever[2] => registradores.DATAB
+dadoEscrever[3] => registradores.DATAB
+dadoEscrever[3] => registradores.DATAB
+dadoEscrever[3] => registradores.DATAB
+dadoEscrever[3] => registradores.DATAB
+dadoEscrever[4] => registradores.DATAB
+dadoEscrever[4] => registradores.DATAB
+dadoEscrever[4] => registradores.DATAB
+dadoEscrever[4] => registradores.DATAB
+dadoEscrever[5] => registradores.DATAB
+dadoEscrever[5] => registradores.DATAB
+dadoEscrever[5] => registradores.DATAB
+dadoEscrever[5] => registradores.DATAB
+dadoEscrever[6] => registradores.DATAB
+dadoEscrever[6] => registradores.DATAB
+dadoEscrever[6] => registradores.DATAB
+dadoEscrever[6] => registradores.DATAB
+dadoEscrever[7] => registradores.DATAB
+dadoEscrever[7] => registradores.DATAB
+dadoEscrever[7] => registradores.DATAB
+dadoEscrever[7] => registradores.DATAB
+dado1[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+dado1[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+dado1[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+dado1[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+dado1[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+dado1[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+dado1[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+dado1[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+dado2[0] <= Mux15.DB_MAX_OUTPUT_PORT_TYPE
+dado2[1] <= Mux14.DB_MAX_OUTPUT_PORT_TYPE
+dado2[2] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
+dado2[3] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+dado2[4] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+dado2[5] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+dado2[6] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+dado2[7] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[0] <= reSaida[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[1] <= reSaida[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[2] <= reSaida[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[3] <= reSaida[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[4] <= reSaida[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[5] <= reSaida[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[6] <= reSaida[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[7] <= reSaida[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_
+A[0] => A[0].IN4
+A[1] => A[1].IN4
+A[2] => A[2].IN4
+A[3] => A[3].IN4
+A[4] => A[4].IN4
+A[5] => A[5].IN4
+A[6] => A[6].IN4
+A[7] => A[7].IN4
+B[0] => B[0].IN5
+B[1] => B[1].IN5
+B[2] => B[2].IN5
+B[3] => B[3].IN5
+B[4] => B[4].IN5
+B[5] => B[5].IN5
+B[6] => B[6].IN5
+B[7] => B[7].IN5
+reEntrada[0] => reEntrada[0].IN1
+reEntrada[1] => reEntrada[1].IN1
+reEntrada[2] => reEntrada[2].IN1
+reEntrada[3] => reEntrada[3].IN1
+reEntrada[4] => reEntrada[4].IN1
+reEntrada[5] => reEntrada[5].IN1
+reEntrada[6] => reEntrada[6].IN1
+reEntrada[7] => reEntrada[7].IN1
+ALUOp1 => Mux0.IN2
+ALUOp1 => Mux1.IN2
+ALUOp1 => Mux2.IN2
+ALUOp1 => Mux3.IN2
+ALUOp1 => Mux4.IN2
+ALUOp1 => Mux5.IN2
+ALUOp1 => Mux6.IN2
+ALUOp1 => Mux7.IN2
+ALUOp1 => Decoder0.IN0
+ALUOp1 => Mux8.IN4
+ALUOp1 => Mux9.IN4
+ALUOp1 => Mux10.IN4
+ALUOp1 => Mux11.IN4
+ALUOp1 => Mux12.IN4
+ALUOp1 => Mux13.IN4
+ALUOp1 => Mux14.IN4
+ALUOp1 => Mux15.IN4
+ALUOp1 => Mux16.IN1
+ALUOp0 => Mux0.IN3
+ALUOp0 => Mux1.IN3
+ALUOp0 => Mux2.IN3
+ALUOp0 => Mux3.IN3
+ALUOp0 => Mux4.IN3
+ALUOp0 => Mux5.IN3
+ALUOp0 => Mux6.IN3
+ALUOp0 => Mux7.IN3
+ALUOp0 => Decoder0.IN1
+ALUOp0 => Mux8.IN5
+ALUOp0 => Mux9.IN5
+ALUOp0 => Mux10.IN5
+ALUOp0 => Mux11.IN5
+ALUOp0 => Mux12.IN5
+ALUOp0 => Mux13.IN5
+ALUOp0 => Mux14.IN5
+ALUOp0 => Mux15.IN5
+ALUOp0 => Mux16.IN2
+funct => funct.IN2
+RegWrite => S.OUTPUTSELECT
+RegWrite => S.OUTPUTSELECT
+RegWrite => S.OUTPUTSELECT
+RegWrite => S.OUTPUTSELECT
+RegWrite => S.OUTPUTSELECT
+RegWrite => S.OUTPUTSELECT
+RegWrite => S.OUTPUTSELECT
+RegWrite => S.OUTPUTSELECT
+RegWrite => zero.OUTPUTSELECT
+RegWrite => reSaida.OUTPUTSELECT
+RegWrite => reSaida.OUTPUTSELECT
+RegWrite => reSaida.OUTPUTSELECT
+RegWrite => reSaida.OUTPUTSELECT
+RegWrite => reSaida.OUTPUTSELECT
+RegWrite => reSaida.OUTPUTSELECT
+RegWrite => reSaida.OUTPUTSELECT
+RegWrite => reSaida.OUTPUTSELECT
+RegWrite => overflow.OUTPUTSELECT
+S[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[0] <= Mux15.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[1] <= Mux14.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[2] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[3] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[4] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[5] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[6] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+reSaida[7] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+zero <= zero.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= Mux16.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddSub
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddSub|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddSub|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddSub|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddSub|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddSub|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddSub|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddSub|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddSub|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddi
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddi|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddi|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddi|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddi|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddi|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddi|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddi|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bAddi|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN3
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN3
+S[0] <= somador8bits:s8bS.S
+S[1] <= somador8bits:s8bS.S
+S[2] <= somador8bits:s8bS.S
+S[3] <= somador8bits:s8bS.S
+S[4] <= somador8bits:s8bS.S
+S[5] <= somador8bits:s8bS.S
+S[6] <= somador8bits:s8bS.S
+S[7] <= somador8bits:s8bS.S
+overflow <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bA
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bA|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bA|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bA|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bA|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bA|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bA|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bA|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bA|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bB
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bB|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bB|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bB|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bB|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bB|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bB|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bB|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bB|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+A[11] => A[11].IN1
+A[12] => A[12].IN1
+A[13] => A[13].IN1
+A[14] => A[14].IN1
+A[15] => A[15].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+B[8] => B[8].IN1
+B[9] => B[9].IN1
+B[10] => B[10].IN1
+B[11] => B[11].IN1
+B[12] => B[12].IN1
+B[13] => B[13].IN1
+B[14] => B[14].IN1
+B[15] => B[15].IN1
+sinal => sinal.IN2
+CarryIn => CarryIn.IN1
+S[0] <= somador8bits:s16b0.S
+S[1] <= somador8bits:s16b0.S
+S[2] <= somador8bits:s16b0.S
+S[3] <= somador8bits:s16b0.S
+S[4] <= somador8bits:s16b0.S
+S[5] <= somador8bits:s16b0.S
+S[6] <= somador8bits:s16b0.S
+S[7] <= somador8bits:s16b0.S
+S[8] <= somador8bits:s16b1.S
+S[9] <= somador8bits:s16b1.S
+S[10] <= somador8bits:s16b1.S
+S[11] <= somador8bits:s16b1.S
+S[12] <= somador8bits:s16b1.S
+S[13] <= somador8bits:s16b1.S
+S[14] <= somador8bits:s16b1.S
+S[15] <= somador8bits:s16b1.S
+CarryOut <= somador8bits:s16b1.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b0
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b0|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b0|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b0|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b0|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b0|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b0|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b0|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b0|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b1|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b1|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b1|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b1|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b1|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b1|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b1|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b0|somador8bits:s16b1|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+A[11] => A[11].IN1
+A[12] => A[12].IN1
+A[13] => A[13].IN1
+A[14] => A[14].IN1
+A[15] => A[15].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+B[8] => B[8].IN1
+B[9] => B[9].IN1
+B[10] => B[10].IN1
+B[11] => B[11].IN1
+B[12] => B[12].IN1
+B[13] => B[13].IN1
+B[14] => B[14].IN1
+B[15] => B[15].IN1
+sinal => sinal.IN2
+CarryIn => CarryIn.IN1
+S[0] <= somador8bits:s16b0.S
+S[1] <= somador8bits:s16b0.S
+S[2] <= somador8bits:s16b0.S
+S[3] <= somador8bits:s16b0.S
+S[4] <= somador8bits:s16b0.S
+S[5] <= somador8bits:s16b0.S
+S[6] <= somador8bits:s16b0.S
+S[7] <= somador8bits:s16b0.S
+S[8] <= somador8bits:s16b1.S
+S[9] <= somador8bits:s16b1.S
+S[10] <= somador8bits:s16b1.S
+S[11] <= somador8bits:s16b1.S
+S[12] <= somador8bits:s16b1.S
+S[13] <= somador8bits:s16b1.S
+S[14] <= somador8bits:s16b1.S
+S[15] <= somador8bits:s16b1.S
+CarryOut <= somador8bits:s16b1.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b0
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b0|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b0|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b0|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b0|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b0|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b0|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b0|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b0|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b1|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b1|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b1|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b1|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b1|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b1|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b1|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b1|somador8bits:s16b1|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+A[11] => A[11].IN1
+A[12] => A[12].IN1
+A[13] => A[13].IN1
+A[14] => A[14].IN1
+A[15] => A[15].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+B[8] => B[8].IN1
+B[9] => B[9].IN1
+B[10] => B[10].IN1
+B[11] => B[11].IN1
+B[12] => B[12].IN1
+B[13] => B[13].IN1
+B[14] => B[14].IN1
+B[15] => B[15].IN1
+sinal => sinal.IN2
+CarryIn => CarryIn.IN1
+S[0] <= somador8bits:s16b0.S
+S[1] <= somador8bits:s16b0.S
+S[2] <= somador8bits:s16b0.S
+S[3] <= somador8bits:s16b0.S
+S[4] <= somador8bits:s16b0.S
+S[5] <= somador8bits:s16b0.S
+S[6] <= somador8bits:s16b0.S
+S[7] <= somador8bits:s16b0.S
+S[8] <= somador8bits:s16b1.S
+S[9] <= somador8bits:s16b1.S
+S[10] <= somador8bits:s16b1.S
+S[11] <= somador8bits:s16b1.S
+S[12] <= somador8bits:s16b1.S
+S[13] <= somador8bits:s16b1.S
+S[14] <= somador8bits:s16b1.S
+S[15] <= somador8bits:s16b1.S
+CarryOut <= somador8bits:s16b1.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b0
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b0|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b0|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b0|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b0|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b0|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b0|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b0|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b0|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b1|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b1|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b1|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b1|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b1|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b1|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b1|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b2|somador8bits:s16b1|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+A[11] => A[11].IN1
+A[12] => A[12].IN1
+A[13] => A[13].IN1
+A[14] => A[14].IN1
+A[15] => A[15].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+B[8] => B[8].IN1
+B[9] => B[9].IN1
+B[10] => B[10].IN1
+B[11] => B[11].IN1
+B[12] => B[12].IN1
+B[13] => B[13].IN1
+B[14] => B[14].IN1
+B[15] => B[15].IN1
+sinal => sinal.IN2
+CarryIn => CarryIn.IN1
+S[0] <= somador8bits:s16b0.S
+S[1] <= somador8bits:s16b0.S
+S[2] <= somador8bits:s16b0.S
+S[3] <= somador8bits:s16b0.S
+S[4] <= somador8bits:s16b0.S
+S[5] <= somador8bits:s16b0.S
+S[6] <= somador8bits:s16b0.S
+S[7] <= somador8bits:s16b0.S
+S[8] <= somador8bits:s16b1.S
+S[9] <= somador8bits:s16b1.S
+S[10] <= somador8bits:s16b1.S
+S[11] <= somador8bits:s16b1.S
+S[12] <= somador8bits:s16b1.S
+S[13] <= somador8bits:s16b1.S
+S[14] <= somador8bits:s16b1.S
+S[15] <= somador8bits:s16b1.S
+CarryOut <= somador8bits:s16b1.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b0
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b0|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b0|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b0|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b0|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b0|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b0|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b0|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b0|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b1|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b1|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b1|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b1|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b1|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b1|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b1|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b3|somador8bits:s16b1|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+A[11] => A[11].IN1
+A[12] => A[12].IN1
+A[13] => A[13].IN1
+A[14] => A[14].IN1
+A[15] => A[15].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+B[8] => B[8].IN1
+B[9] => B[9].IN1
+B[10] => B[10].IN1
+B[11] => B[11].IN1
+B[12] => B[12].IN1
+B[13] => B[13].IN1
+B[14] => B[14].IN1
+B[15] => B[15].IN1
+sinal => sinal.IN2
+CarryIn => CarryIn.IN1
+S[0] <= somador8bits:s16b0.S
+S[1] <= somador8bits:s16b0.S
+S[2] <= somador8bits:s16b0.S
+S[3] <= somador8bits:s16b0.S
+S[4] <= somador8bits:s16b0.S
+S[5] <= somador8bits:s16b0.S
+S[6] <= somador8bits:s16b0.S
+S[7] <= somador8bits:s16b0.S
+S[8] <= somador8bits:s16b1.S
+S[9] <= somador8bits:s16b1.S
+S[10] <= somador8bits:s16b1.S
+S[11] <= somador8bits:s16b1.S
+S[12] <= somador8bits:s16b1.S
+S[13] <= somador8bits:s16b1.S
+S[14] <= somador8bits:s16b1.S
+S[15] <= somador8bits:s16b1.S
+CarryOut <= somador8bits:s16b1.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b0
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b0|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b0|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b0|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b0|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b0|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b0|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b0|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b0|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b1|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b1|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b1|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b1|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b1|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b1|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b1|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b4|somador8bits:s16b1|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+A[11] => A[11].IN1
+A[12] => A[12].IN1
+A[13] => A[13].IN1
+A[14] => A[14].IN1
+A[15] => A[15].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+B[8] => B[8].IN1
+B[9] => B[9].IN1
+B[10] => B[10].IN1
+B[11] => B[11].IN1
+B[12] => B[12].IN1
+B[13] => B[13].IN1
+B[14] => B[14].IN1
+B[15] => B[15].IN1
+sinal => sinal.IN2
+CarryIn => CarryIn.IN1
+S[0] <= somador8bits:s16b0.S
+S[1] <= somador8bits:s16b0.S
+S[2] <= somador8bits:s16b0.S
+S[3] <= somador8bits:s16b0.S
+S[4] <= somador8bits:s16b0.S
+S[5] <= somador8bits:s16b0.S
+S[6] <= somador8bits:s16b0.S
+S[7] <= somador8bits:s16b0.S
+S[8] <= somador8bits:s16b1.S
+S[9] <= somador8bits:s16b1.S
+S[10] <= somador8bits:s16b1.S
+S[11] <= somador8bits:s16b1.S
+S[12] <= somador8bits:s16b1.S
+S[13] <= somador8bits:s16b1.S
+S[14] <= somador8bits:s16b1.S
+S[15] <= somador8bits:s16b1.S
+CarryOut <= somador8bits:s16b1.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b0
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b0|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b0|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b0|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b0|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b0|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b0|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b0|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b0|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b1|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b1|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b1|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b1|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b1|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b1|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b1|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b5|somador8bits:s16b1|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+A[11] => A[11].IN1
+A[12] => A[12].IN1
+A[13] => A[13].IN1
+A[14] => A[14].IN1
+A[15] => A[15].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+B[8] => B[8].IN1
+B[9] => B[9].IN1
+B[10] => B[10].IN1
+B[11] => B[11].IN1
+B[12] => B[12].IN1
+B[13] => B[13].IN1
+B[14] => B[14].IN1
+B[15] => B[15].IN1
+sinal => sinal.IN2
+CarryIn => CarryIn.IN1
+S[0] <= somador8bits:s16b0.S
+S[1] <= somador8bits:s16b0.S
+S[2] <= somador8bits:s16b0.S
+S[3] <= somador8bits:s16b0.S
+S[4] <= somador8bits:s16b0.S
+S[5] <= somador8bits:s16b0.S
+S[6] <= somador8bits:s16b0.S
+S[7] <= somador8bits:s16b0.S
+S[8] <= somador8bits:s16b1.S
+S[9] <= somador8bits:s16b1.S
+S[10] <= somador8bits:s16b1.S
+S[11] <= somador8bits:s16b1.S
+S[12] <= somador8bits:s16b1.S
+S[13] <= somador8bits:s16b1.S
+S[14] <= somador8bits:s16b1.S
+S[15] <= somador8bits:s16b1.S
+CarryOut <= somador8bits:s16b1.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b0
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b0|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b0|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b0|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b0|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b0|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b0|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b0|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b0|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b1|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b1|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b1|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b1|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b1|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b1|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b1|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b6|somador8bits:s16b1|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+A[11] => A[11].IN1
+A[12] => A[12].IN1
+A[13] => A[13].IN1
+A[14] => A[14].IN1
+A[15] => A[15].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+B[8] => B[8].IN1
+B[9] => B[9].IN1
+B[10] => B[10].IN1
+B[11] => B[11].IN1
+B[12] => B[12].IN1
+B[13] => B[13].IN1
+B[14] => B[14].IN1
+B[15] => B[15].IN1
+sinal => sinal.IN2
+CarryIn => CarryIn.IN1
+S[0] <= somador8bits:s16b0.S
+S[1] <= somador8bits:s16b0.S
+S[2] <= somador8bits:s16b0.S
+S[3] <= somador8bits:s16b0.S
+S[4] <= somador8bits:s16b0.S
+S[5] <= somador8bits:s16b0.S
+S[6] <= somador8bits:s16b0.S
+S[7] <= somador8bits:s16b0.S
+S[8] <= somador8bits:s16b1.S
+S[9] <= somador8bits:s16b1.S
+S[10] <= somador8bits:s16b1.S
+S[11] <= somador8bits:s16b1.S
+S[12] <= somador8bits:s16b1.S
+S[13] <= somador8bits:s16b1.S
+S[14] <= somador8bits:s16b1.S
+S[15] <= somador8bits:s16b1.S
+CarryOut <= somador8bits:s16b1.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b0
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b0|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b0|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b0|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b0|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b0|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b0|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b0|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b0|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b1|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b1|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b1|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b1|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b1|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b1|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b1|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador16bits:s16b7|somador8bits:s16b1|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bS
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bS|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bS|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bS|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bS|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bS|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bS|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bS|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|multiplicador8bits:m8bMult|somador8bits:s8bS|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bD
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|somador8bits:s8bD|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bD|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bD|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bD|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bD|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bD|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bD|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bD|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bR
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+sinal => sinal.IN8
+CarryIn => CarryIn.IN1
+S[0] <= somador1bit:s8b0.S
+S[1] <= somador1bit:s8b1.S
+S[2] <= somador1bit:s8b2.S
+S[3] <= somador1bit:s8b3.S
+S[4] <= somador1bit:s8b4.S
+S[5] <= somador1bit:s8b5.S
+S[6] <= somador1bit:s8b6.S
+S[7] <= somador1bit:s8b7.S
+CarryOut <= somador1bit:s8b7.CarryOut
+
+
+|nRisc|Ula:ula_|somador8bits:s8bR|somador1bit:s8b0
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bR|somador1bit:s8b1
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bR|somador1bit:s8b2
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bR|somador1bit:s8b3
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bR|somador1bit:s8b4
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bR|somador1bit:s8b5
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bR|somador1bit:s8b6
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Ula:ula_|somador8bits:s8bR|somador1bit:s8b7
+A => S.IN1
+A => CarryOut.IN1
+A => CarryOut.IN0
+B => Bsigned.IN0
+sinal => Bsigned.IN1
+CarryIn => S.IN1
+CarryIn => CarryOut.IN1
+CarryIn => CarryOut.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+CarryOut <= CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|MemoriaData:memData_
+endereco[0] => memoria.waddr_a[0].DATAIN
+endereco[0] => memoria.WADDR
+endereco[0] => memoria.RADDR
+endereco[1] => memoria.waddr_a[1].DATAIN
+endereco[1] => memoria.WADDR1
+endereco[1] => memoria.RADDR1
+endereco[2] => memoria.waddr_a[2].DATAIN
+endereco[2] => memoria.WADDR2
+endereco[2] => memoria.RADDR2
+endereco[3] => memoria.waddr_a[3].DATAIN
+endereco[3] => memoria.WADDR3
+endereco[3] => memoria.RADDR3
+endereco[4] => memoria.waddr_a[4].DATAIN
+endereco[4] => memoria.WADDR4
+endereco[4] => memoria.RADDR4
+endereco[5] => memoria.waddr_a[5].DATAIN
+endereco[5] => memoria.WADDR5
+endereco[5] => memoria.RADDR5
+endereco[6] => memoria.waddr_a[6].DATAIN
+endereco[6] => memoria.WADDR6
+endereco[6] => memoria.RADDR6
+endereco[7] => ~NO_FANOUT~
+dadoEscrever[0] => memoria.data_a[0].DATAIN
+dadoEscrever[0] => memoria.DATAIN
+dadoEscrever[1] => memoria.data_a[1].DATAIN
+dadoEscrever[1] => memoria.DATAIN1
+dadoEscrever[2] => memoria.data_a[2].DATAIN
+dadoEscrever[2] => memoria.DATAIN2
+dadoEscrever[3] => memoria.data_a[3].DATAIN
+dadoEscrever[3] => memoria.DATAIN3
+dadoEscrever[4] => memoria.data_a[4].DATAIN
+dadoEscrever[4] => memoria.DATAIN4
+dadoEscrever[5] => memoria.data_a[5].DATAIN
+dadoEscrever[5] => memoria.DATAIN5
+dadoEscrever[6] => memoria.data_a[6].DATAIN
+dadoEscrever[6] => memoria.DATAIN6
+dadoEscrever[7] => memoria.data_a[7].DATAIN
+dadoEscrever[7] => memoria.DATAIN7
+MemRead => dadoLido[0]$latch.LATCH_ENABLE
+MemRead => dadoLido[1]$latch.LATCH_ENABLE
+MemRead => dadoLido[2]$latch.LATCH_ENABLE
+MemRead => dadoLido[3]$latch.LATCH_ENABLE
+MemRead => dadoLido[4]$latch.LATCH_ENABLE
+MemRead => dadoLido[5]$latch.LATCH_ENABLE
+MemRead => dadoLido[6]$latch.LATCH_ENABLE
+MemRead => dadoLido[7]$latch.LATCH_ENABLE
+MemWrite => memoria.we_a.DATAIN
+MemWrite => memoria.WE
+Clock => memoria.we_a.CLK
+Clock => memoria.waddr_a[6].CLK
+Clock => memoria.waddr_a[5].CLK
+Clock => memoria.waddr_a[4].CLK
+Clock => memoria.waddr_a[3].CLK
+Clock => memoria.waddr_a[2].CLK
+Clock => memoria.waddr_a[1].CLK
+Clock => memoria.waddr_a[0].CLK
+Clock => memoria.data_a[7].CLK
+Clock => memoria.data_a[6].CLK
+Clock => memoria.data_a[5].CLK
+Clock => memoria.data_a[4].CLK
+Clock => memoria.data_a[3].CLK
+Clock => memoria.data_a[2].CLK
+Clock => memoria.data_a[1].CLK
+Clock => memoria.data_a[0].CLK
+Clock => memoria.CLK0
+dadoLido[0] <= dadoLido[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+dadoLido[1] <= dadoLido[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+dadoLido[2] <= dadoLido[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+dadoLido[3] <= dadoLido[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+dadoLido[4] <= dadoLido[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+dadoLido[5] <= dadoLido[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+dadoLido[6] <= dadoLido[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+dadoLido[7] <= dadoLido[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|nRisc|Controle:control_
+Op2 => ALUSrc.IN0
+Op2 => Jump.IN0
+Op2 => ALUSrc.IN0
+Op2 => RegWrite.IN0
+Op2 => MemRead.IN0
+Op1 => ALUSrc.IN1
+Op1 => MemToReg.IN0
+Op1 => MemRead.IN1
+Op1 => ALUSrc.IN1
+Op1 => Jump.IN1
+Op0 => ALUSrc.IN1
+Op0 => MemToReg.IN1
+Op0 => MemRead.IN1
+Op0 => NextOp.IN1
+Op0 => ALUOp1.IN1
+Op0 => ALUOp0.IN1
+Op0 => Branch.IN1
+Op0 => Jump.IN1
+Op0 => ALUOp1.IN1
+funct => MemWrite.IN1
+funct => End.IN1
+funct => MemToReg.IN1
+funct => RegWrite.IN1
+funct => MemRead.IN1
+funct => NextOp.IN1
+reset => ALUSrc.IN1
+reset => MemToReg.IN1
+reset => RegWrite.IN1
+reset => MemRead.IN1
+reset => MemWrite.IN1
+reset => Branch.IN1
+reset => Jump.IN1
+reset => NextOp.IN1
+reset => End.IN1
+reset => ALUOp1.IN1
+reset => ALUOp0.IN1
+ALUSrc <= ALUSrc.DB_MAX_OUTPUT_PORT_TYPE
+MemToReg <= MemToReg.DB_MAX_OUTPUT_PORT_TYPE
+RegWrite <= RegWrite.DB_MAX_OUTPUT_PORT_TYPE
+MemRead <= MemRead.DB_MAX_OUTPUT_PORT_TYPE
+MemWrite <= MemWrite.DB_MAX_OUTPUT_PORT_TYPE
+Branch <= Branch.DB_MAX_OUTPUT_PORT_TYPE
+Jump <= Jump.DB_MAX_OUTPUT_PORT_TYPE
+NextOp <= NextOp.DB_MAX_OUTPUT_PORT_TYPE
+End <= End.DB_MAX_OUTPUT_PORT_TYPE
+ALUOp1 <= ALUOp1.DB_MAX_OUTPUT_PORT_TYPE
+ALUOp0 <= ALUOp0.DB_MAX_OUTPUT_PORT_TYPE
+
+
