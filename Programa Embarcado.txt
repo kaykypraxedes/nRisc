@@ -21,7 +21,9 @@
 7-  addi $c0, 0                             001 00 000                             # $c0 = 5
 8-  addi $c0, 0                             001 00 000                             # $c0 = 5
 9-  nop 			            	    	111 0000 0
-# Para tornar o código programável, sem que a mudança de cifra alterasse a quantidade de linhas (já que as somas com imediato só podem ser feitas de 3 em 3 e os jumps são pra uma linha específica), faz-se uma soma de 5 linhas sempre (que vai de -15 até 15, que cobre todo o range)
+# Para tornar o código programável, sem que a mudança de cifra alterasse a quantidade de linhas (já que as somas com imediato só podem
+ser feitas de 3 em 3 e os jumps são pra uma linha específica), faz-se uma soma de 5 linhas sempre (que vai de -15 até 15, que cobre 
+todo o range)
 
 # Processo de cifragem
 10- ld $c1, $c2                             011 01 10 0                         # $c1 = memória[$c2] (letra)
