@@ -1,6 +1,0 @@
-vendor_name = ModelSim
-source_file = 1, D:/CEFET/02_Graduação/3° Periodo/Arquitetura e Organização de Computadores  I/_Laboratório/nRisc/git/nRisc em Verilog/nRisc.v
-source_file = 1, D:/CEFET/02_Graduação/3° Periodo/Arquitetura e Organização de Computadores  I/_Laboratório/nRisc/git/nRisc em Verilog/db/nRisc.cbx.xml
-design_name = nRisc
-instance = comp, \Clock~I , Clock, nRisc, 1
-instance = comp, \Reset~I , Reset, nRisc, 1
