@@ -211,7 +211,7 @@ module MemoriaInstrucoes(
 	memoria[59] = 8'b00100001;  // addi $c0, 1
 	memoria[60] = 8'b00011111;  // sub $c3, $c3
 	memoria[61] = 8'b10101001;  // slt $c1, $c0
-  	memoria[62] = 8'b00000001;  // sub $c0, $c0
+	memoria[62] = 8'b00000001;  // sub $c0, $c0
 	memoria[63] = 8'b00111011;  // addi $c3, 3
 	memoria[64] = 8'b01011110;  // mult $c3, $c3
 	memoria[65] = 8'b01011110;  // mult $c3, $c3
